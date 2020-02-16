@@ -34,7 +34,7 @@ func main() {
 	e.Use(middleware.Logger())
 	e.Use(middleware.Recover())
 
-	e.Any("/graphql", func(context echo.Context) error {
+	e.Any("/graphql-playground", func(context echo.Context) error {
 		gw.PlaygroundHandler(context.Response(), context.Request())
 		return nil
 	})
